@@ -1,0 +1,117 @@
+body {
+margin: 0;
+padding: 0;
+  font-size: 16px;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+#progressb {
+  top: 0;
+  position: fixed;
+background: linear-gradient(90deg, rgba(255,107,53,1) 49%, rgba(247,197,159,1) 100%);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 20px;
+  width: 0;
+  transition: width 0.2s ease-in-out;
+}
+h1 {
+	color: #ff6b35;
+  font-size: 3rem;
+  font-weight: 800;
+  transition: 0.3s all ease;
+}
+.center {
+  background-color: #f7c59f;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form {
+  background: #fff;
+  color: #333;
+  position: relative;
+  width: 410px;
+  padding: 2px 15px 20px 15px;
+  box-shadow: 0 16px 0px 0px rgba(#ff6b35, 0.5);
+  transition: transform .1s ease-in-out;
+  border-radius: 30px;
+}
+
+@media (max-width: 500px) {
+  #form {
+    width: 90%;
+  }
+}
+
+#form.close {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: .8s ease-in-out;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0);
+}
+.next {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 40px;
+  color: #4e937a;
+  float: right;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.next:hover {
+	color: #376856;
+}
+.wrong .next {
+	color: #4e937a;
+}
+.close .next {
+	color: #fff;
+}
+#container {
+  position: relative;
+  opacity: 0;
+  width: 350px;
+  margin-top: 25px;
+  transition: opacity .3s ease-in-out;
+
+}
+#container input {
+  width: 100%;
+  padding: 0 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow:none;  
+}
+#placeholder {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 5px;
+  transition: .2s ease-in-out;
+}
+#container input:valid + #placeholder {
+  top: -15px;
+  font-size: 11px;
+  font-weight: normal;
+  color: #333;
+}
+#bottomline {
+  position: absolute;
+  border-bottom: 2px solid #4e937a;
+  padding: 3px 0;
+  width: 0;
+  left: 5px;
+  transition: width .6s ease-in-out;
+}
+.wrong #bottomline {
+  border-color: #ff2d26;
+}
